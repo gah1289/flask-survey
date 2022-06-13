@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Start Page {% endblock %}
+
+{% block content %}
+<h1>Surveys</h1>
+
+{% for i in range(length) %}
+<form action='/start' method="POST">
+    <h2>{{values[i].title}}</h2>
+    <p>{{values[i].instructions}}</p>
+    <!-- <input type="submit" name="survey_list_num" id="{{i}}" value="Take Survey!"> -->
+    <button type="submit" name="survey_list_num" value="{{i}}">Take Survey!</button>
+</form>
+{% endfor %}
+{% endblock %}
